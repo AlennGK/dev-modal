@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 
 
 // COMPONENTS
-import Modal from '../5-pages/Modal.vue';
+import Modal from './components/pages/Modal.vue';
 
 // ROUTES
 const Router = new VueRouter({

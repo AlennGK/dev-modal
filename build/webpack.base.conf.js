@@ -9,10 +9,7 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    app: [
-      './src/assets/js/App.js',
-      './src/assets/js/1-webpack/assets.js',
-    ],
+    app: './src/App.js'
   },
   output: {
     path: config.build.assetsRoot,

@@ -22,7 +22,7 @@ const mutations = {
   },
 
   elPrew () {
-    state.elModal = 'form-prew'
+    state.elModal = 'prew-article'
   },
 }
 

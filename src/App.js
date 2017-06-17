@@ -1,14 +1,17 @@
 // VENDOR
 import Vue from 'vue'
 import VueResource from 'vue-resource'
-import VueMoment from 'vue-moment'
 import axios from 'axios'
+
+// CSS & PLUGINS
+import './App.sass'
 import swal from 'sweetalert2'
 import Vuelidate from 'vuelidate'
+import VueMoment from 'vue-moment'
 
 // VUE CORE
-import VueBox from './VueBox.vue'
-import router from './2-core/Routes.js'
+import VueBox from './vue/VueBox.vue'
+import router from './vue/Routes.js'
 
 // CONFIG
 Vue.config.productionTip = false
@@ -21,7 +24,6 @@ Vue.use(Vuelidate)
 
 
 // GLOBAL WINDOWS
-
 window.Vue = Vue
 window.axios = axios
 window.swal = swal

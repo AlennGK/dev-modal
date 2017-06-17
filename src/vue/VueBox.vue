@@ -10,7 +10,7 @@
 
 <script>
 
-    import store from './6-vuex/store.js'
+    import store from './vuex/store.js'
 
     export default {
         name: 'vue',

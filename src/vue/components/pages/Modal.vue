@@ -25,16 +25,17 @@
 <script>
 
 	import { mapActions } from 'vuex'
-	import modalBox from '../4-components/modal/modalBox.vue'
-	import createArticle from '../4-components/forms/createArticle.vue'
-	import authLogin from '../4-components/forms/authLogin.vue'
-	import authRegister from '../4-components/forms/authRegister.vue'
+	import api from '../../config/api.js'
+	import modalBox from '../modal/modalBox.vue'
+	import prewArticle from '../modal/prewArticle.vue'
+	import authLogin from '../forms/authLogin.vue'
+	import authRegister from '../forms/authRegister.vue'
 
 	export default {
 
 		components: {
 			'modal-box': modalBox,
-			'form-article': createArticle,
+			'prew-article': prewArticle,
 			'form-login': authLogin,
 			'form-register': authRegister
 		},
