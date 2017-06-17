@@ -1,5 +1,5 @@
 const state = {
-  isModalOpen: true
+  isModalOpen: false
 };
 
 const mutations = {

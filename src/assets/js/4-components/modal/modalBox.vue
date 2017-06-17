@@ -5,7 +5,7 @@
 				<slot name="background"></slot>
 		</div>
 		<div class="modal-content box">
-				<slot>Modal default content!</slot>
+				<slot name="content">Modal default content!</slot>
 		</div>
 		<button class="modal-close" @click="closeModal()"></button>
 	</div>

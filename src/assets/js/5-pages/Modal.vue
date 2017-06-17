@@ -1,20 +1,22 @@
 <template>
 
 	<section class="section">
-		<button class="button is-info" @click="openModal()">
-			<i class="fa fa-plus" aria-hidden="true">&nbsp;</i>Create
+		<button class="button is-info" @click.prevent="openCreate">
+			<i class="fa fa-plus" aria-hidden="true">&nbsp;</i>Modal A
 		</button>
 
+		<button class="button is-warning" @click.prevent="openLogin">
+			<i class="fa fa-plus" aria-hidden="true">&nbsp;</i>Modal B
+		</button>
 
-		<div v-if="isModalOpen" class="modal is-active">
-			<div class="modal-background" @click="closeModal()">
-					<slot name="background"></slot>
+		<modal-box>
+			<div class="content" slot="content">
+
+				<component :is="el"></component>
+
 			</div>
-			<div class="modal-content box">
-					<slot>Modal default content!</slot>
-			</div>
-			<button class="modal-close" @click="closeModal()"></button>
-		</div>
+		</modal-box>
+
 	</section>
 
 </template>
@@ -23,15 +25,22 @@
 <script>
 
 	import { mapActions } from 'vuex'
+	import modalBox from '../4-components/modal/modalBox.vue'
+	import createArticle from '../4-components/forms/createArticle.vue'
+	import authLogin from '../4-components/forms/authLogin.vue'
 
 	export default {
 
 		components: {
+			'modal-box': modalBox,
+			'form-article': createArticle,
+			'form-login': authLogin
 		},
 
 		data(){
 
 			return {
+				el: ''
 			}
 		},
 
@@ -43,16 +52,25 @@
 
 		methods:
 			Object.assign({},
-				mapActions([ 'closeModal' ]),
-			)
+				mapActions([ 'closeModal', 'openModal' ]),
+
+				{
+					openCreate(){
+						this.el = 'form-article'
+						this.$store.dispatch( 'openModal' )
+					},
+
+					openLogin(){
+						this.el = 'form-login'
+						this.$store.dispatch( 'openModal' )
+					}
+				}
+			),
 
 	}
 
 </script>
 
-
-<style>
-</style>
 
 
 	
