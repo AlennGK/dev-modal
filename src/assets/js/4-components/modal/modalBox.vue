@@ -19,6 +19,12 @@ import { mapActions } from 'vuex';
 	export default {
 		name: 'modalBox',
 
+		data(){
+
+			return {
+			}
+		},
+
 		computed: {
 			isModalOpen () {
 				return this.$store.getters.isModalOpen

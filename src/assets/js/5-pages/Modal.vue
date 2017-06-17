@@ -1,18 +1,18 @@
 <template>
 
 	<section class="section">
-		<button class="button is-info" @click.prevent="openCreate">
-			<i class="fa fa-plus" aria-hidden="true">&nbsp;</i>Modal A
+		<button class="button is-info" @click.prevent="openPrew">
+			<i class="fa fa-plus" aria-hidden="true">&nbsp;</i>Preview
 		</button>
 
 		<button class="button is-warning" @click.prevent="openLogin">
-			<i class="fa fa-plus" aria-hidden="true">&nbsp;</i>Modal B
+			<i class="fa fa-plus" aria-hidden="true">&nbsp;</i>Login
 		</button>
 
 		<modal-box>
-			<div class="content" slot="content">
+			<div slot="content">
 
-				<component :is="el"></component>
+				<component :is="elModal"></component>
 
 			</div>
 		</modal-box>
@@ -28,40 +28,41 @@
 	import modalBox from '../4-components/modal/modalBox.vue'
 	import createArticle from '../4-components/forms/createArticle.vue'
 	import authLogin from '../4-components/forms/authLogin.vue'
+	import authRegister from '../4-components/forms/authRegister.vue'
 
 	export default {
 
 		components: {
 			'modal-box': modalBox,
 			'form-article': createArticle,
-			'form-login': authLogin
+			'form-login': authLogin,
+			'form-register': authRegister
 		},
 
 		data(){
 
 			return {
-				el: ''
 			}
 		},
 
 		computed: {
-			isModalOpen () {
-				return this.$store.getters.isModalOpen
-			},
+			elModal (){
+				return this.$store.getters.elModal
+			}
 		},
 
 		methods:
 			Object.assign({},
-				mapActions([ 'closeModal', 'openModal' ]),
+				mapActions([ 'openModal', 'elLogin', 'elPrew' ]),
 
 				{
-					openCreate(){
-						this.el = 'form-article'
+					openPrew(){
+						this.$store.dispatch( 'elPrew' )
 						this.$store.dispatch( 'openModal' )
 					},
 
 					openLogin(){
-						this.el = 'form-login'
+						this.$store.dispatch( 'elLogin' )
 						this.$store.dispatch( 'openModal' )
 					}
 				}
@@ -70,6 +71,9 @@
 	}
 
 </script>
+
+
+
 
 
 

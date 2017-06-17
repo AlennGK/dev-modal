@@ -1,4 +1,5 @@
 import Errors from './Errors';
+import axios from 'axios'
 
 class Form {
 	/**
@@ -111,7 +112,7 @@ class Form {
 	 *
 	 * @param {object} data
 	 */
-	onSuccess(data) {
+	onSuccess() {
 		// alert(data.message); // temporary
 
 		this.reset();

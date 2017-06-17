@@ -4,6 +4,7 @@ import VueResource from 'vue-resource'
 import VueMoment from 'vue-moment'
 import axios from 'axios'
 import swal from 'sweetalert2'
+import Vuelidate from 'vuelidate'
 
 // VUE CORE
 import VueBox from './VueBox.vue'
@@ -16,6 +17,8 @@ Vue.config.productionTip = false
 // VUE USE
 Vue.use(VueResource)
 Vue.use(VueMoment)
+Vue.use(Vuelidate)
+
 
 // GLOBAL WINDOWS
 
