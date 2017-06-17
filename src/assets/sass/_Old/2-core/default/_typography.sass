@@ -1,0 +1,156 @@
+/*	----------------------------------------
+	FONT
+	---------------------------------------- */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i,500,700')
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,500,700')
+
+$font-family-primary: 'Roboto Mono', 'Roboto', sans-serif
+$font-family-title: $font-family-primary, consolas
+$font-weight-body: 300
+$font-weight-title: 700
+
+body
+	font-family: 'Roboto', $font-family-primary
+	font-weight: $font-weight-body
+	letter-spacing: 0.1618px
+
+	h1, h2, h3, h4, p, a, label, button, textarea, b, i, strong, ol, ul, dt, dd, .nav-li, .as-li
+
+/*	----------------------------------------
+	HEADERS
+	---------------------------------------- */
+h1, h2, h3, h4
+	background: $darkA
+	border-top: 1px solid $focus
+	color: $light-txt
+	font-weight: 700
+	margin: 0
+	padding: 0
+	height: 1.5em
+	line-height: 1.5em
+	width: 100%
+
+h1
+	padding-left: 4%
+h2
+	padding-left: 5%
+h3
+	padding-left: 6%
+h4
+	padding-left: 6.5%
+	border: none
+	background: none
+
+
+/*	----------------------------------------
+	TEXT
+	---------------------------------------- */
+p, label
+	color: $light-txt
+	font-weight: 300
+	margin: 0
+
+label
+	cursor: pointer
+
+p
+	padding: 0.25em
+
+.b, b, strong, dt
+	font-weight: 500
+
+.i, em, dt
+	font-style: italic
+
+.coment
+	border-left: 0.25em solid $focus
+	padding: 0.25em
+
+
+/*	----------------------------------------
+	LINKS
+	---------------------------------------- */
+a
+	text-decoration: none
+	font-weight: 500
+
+a, a:visited
+	text-decoration: none
+	color: $link-txt
+
+a:hover, a:active, a:focus
+	color: $focus
+	text-decoration: none
+	@extend .font-glow
+
+
+/*	----------------------------------------
+	LISTS
+	---------------------------------------- */
+ol, ul
+	color: $light-txt
+	list-style-position: inside
+	padding: 0
+
+ol
+	counter-reset: main
+
+	li:before
+		content: "0" counter(main) "  "
+		counter-increment: main
+
+	ol
+		counter-reset: second
+		padding-left: 1em
+
+		li:before
+			content: counter(main) "." counter(second) "  "
+			counter-increment: second
+
+ul
+	li
+		list-style-type: none
+
+
+/*	----------------------------------------
+	DEFINITION
+	---------------------------------------- */
+dt
+	color: $light-txt
+
+dd
+	color: $light-txt
+	padding: 0 0 0.25em 2em
+
+dd:before
+	content: "|| "
+
++desktop
+	*, h4
+		font-size: $txt
+	h1
+		font-size: $txt-xl
+	h2
+		font-size: $txt-l
+	h3
+		font-size: $txt-sl
+
+	p, i
+		font-size: $txt
+
+	.nav-li
+		font-size: $txt-l
+
++mobile
+	*, h4
+		font-size: $txt * $m
+
+	h1
+		font-size: $txt-xl * $m
+	h2
+		font-size: $txt-l * $m
+	h3
+		font-size: $txt-sl * $m
+
+	.nav-li
+		font-size: $txt-l * $m

@@ -1,0 +1,142 @@
+/*	----------------------------------------
+	BUTTONS
+	---------------------------------------- */
+=btn($color: $blue)
+	+border-light(1px, $color * 0.8)
+	+flex-row
+	+trans-direct
+	background: $color
+	border-radius: 0
+	color: $light-txt !important
+	height: 2.5em
+	min-width: 7em
+	outline: none
+	padding: 0 1em
+	transition: text-shadow 150ms $ease-in-out-cubic
+
+	&:focus, &.focus, &:hover, &.hover
+		+bg-elipse($color * 0.8)
+		+font-glow(rgba($light-txt, 0.8))
+		outline: none
+
+	&:active, &.active
+		+bg-elipse($color)
+		outline: none
+
+	&:disabled, &.disabled
+		+bg-elipse($color * 0.8)
+		border: 0
+		cursor: not-allowed
+		border: 2px solid $color
+		text-shadow: none
+
+.btn
+	+btn
+
+.btn-red
+	+btn($red)
+
+.btn-green
+	+btn($green)
+
+.btn-focus
+	+btn($focus)
+
+.btn-win
+	+btn(rgba($silver, 0.1))
+
+.btn-clean
+	+btn($invis)
+	+border-light(1px, $silver * 0.4)
+
+.btn-clear
+	+btn($invis)
+	+border-light(0px)
+	min-width: 1em
+
+	&:focus, &:hover, &:active, &.active
+		+shadow-in
+
+.btn-focus-2
+	+btn($focus40)
+
+.btn-glass
+	+btn(rgba($navy, 0.2))
+
+	&:focus, &:hover
+		+border-light(1px, $focus)
+		box-shadow: inset 0 0 0.8em $focus
+
+	&:active, &.active
+		+border-light(1px, $focus)
+		box-shadow: inset 0 0 1.5em $focus
+
+	&:disabled, &.disabled
+		+border-light(1px, $darkA)
+		box-shadow: inset 0 0 1.5em $darkA40
+
+// ICONS
+.btn-ico
+	i
+		padding-left: 0.5em
+
+.btn-ico-left
+	i
+		padding-right: 0.5em
+
+.btn-login
+	+btn($blue * 0.8)
+
+.btn-logout
+	+btn($red * 0.8)
+
+.btn-login, .btn-logout, .drop-down-btn, .drop-up-btn, .btn-link, .btn-upload
+	&:after
+		font-family: FontAwesome
+		padding-left: 0.5em
+
+.btn-ico-alone
+	&:after
+		padding: 0
+
+
+// GLYPHICONS
+.btn-login:after
+	content: "\f090"
+
+.btn-logout:after
+	content: "\f08b"
+
+.drop-down-btn:after
+	content: "\f0d7"
+
+.drop-up-btn:after
+	content: "\f0d8"
+
+.btn-link:after
+	content: "\f0c1"
+
+.btn-upload:after
+	content: "\f093"
+
+
++desktop
+	.btn
+		font-size: $txt
+
+	.btn-d2
+		font-size: $txt-s
+
+	.btn-2x
+		font-size: $txt-l
+
+
++mobile
+	.btn
+		font-size: $txt * $m
+
+	.btn-d2
+		font-size: $txt-s * $m
+
+	.btn-2x
+		font-size: $txt-l * $m

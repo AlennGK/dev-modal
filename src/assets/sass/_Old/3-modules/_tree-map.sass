@@ -1,0 +1,90 @@
+/*	----------------------------------------
+	TREE-MAP
+	---------------------------------------- */
+.tree-map
+	padding: 1em 0
+	+size(100%)
+	overflow: hidden
+	overflow-y: scroll
+
+	.event
+		+shadow-in
+		background: rgba($navy, 0.2)
+		border-right: 1px solid $focus
+		box-sizing: content-box
+		height: auto
+		margin-left: 0%
+		margin-right: 50%
+		min-height: 10em
+		width: 50%
+		z-index: 2
+
+		h4
+			+border-horizontal($focus, 0%, 80%)
+			border-bottom: 1px solid
+			box-sizing: border-box
+			padding: 0.25em 0.5em
+			text-align: right
+			width: 100%
+			position: relative
+			top: -1.75em
+
+		p
+			padding: 0.5em
+
+		.stamp
+			+border-horizontal($focus, 100%, 0%)
+			+flex-row-s
+			+trans-over
+			border-bottom: 1px solid
+			height: 2.5em
+			line-height: 2em
+			margin-left: 50%
+			opacity: 0
+			position: relative
+			width: 50%
+
+			p
+				+flex-row
+				font-size: $txt-s
+
+				i
+					padding: 0 0.5em
+
+		&:hover
+			.stamp
+				opacity: 1
+				margin-left: 100%
+
+	.event:nth-child(2n)
+		background: rgba($red, 0.2)
+		border: none
+		border-left: 1px solid $focus
+		margin-left: 50%
+		margin-right: 0%
+
+		h4
+			+border-horizontal($focus, 100%, 0%)
+			text-align: left
+
+		.stamp
+			+border-horizontal($focus, 0%, 80%)
+			border-bottom: 1px solid
+			flex-direction: row-reverse
+			margin-left: 0%
+
+
+		&:hover
+			.stamp
+				margin-left: -50%
+
+	.event:nth-child(3n)
+		background: rgba($green, 0.2)
+
+
+	.wip
+		+animation(pulse 5000ms linear infinite)
+
+		h4
+			border-bottom: 1px dashed $focus
+			border-image: none !important

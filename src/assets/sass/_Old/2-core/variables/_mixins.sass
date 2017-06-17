@@ -1,0 +1,48 @@
+/*	----------------------------------------
+	BROWSER SIZE
+	---------------------------------------- */
+=desktop
+  @media only screen and (min-width: #{$desktop})
+    @content
+
+=mobile
+	@media only screen and (max-width: #{$desktop})
+		@content
+
+
+/*	----------------------------------------
+	FLEX SETUP
+	---------------------------------------- */
+=flex-col
+	align-items: center
+	display: flex
+	flex-direction: column
+	justify-content: center
+
+=flex-col-s
+	align-items: flex-start
+	display: flex
+	flex-direction: column
+	justify-content: flex-start
+
+=flex-row
+	align-items: center
+	display: flex
+	justify-content: center
+
+=flex-row-s
+	display: flex
+	justify-content: flex-start
+	align-items: flex-start
+
+.col
+	+flex-col
+
+.cols
+	+flex-col-s
+
+.row
+	+flex-row
+
+.rows
+	+flex-row-s

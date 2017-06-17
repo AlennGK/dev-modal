@@ -1,0 +1,217 @@
+/*	----------------------------------------
+	TEXT BOXES
+	---------------------------------------- */
+input[type="text"], input[type="password"], input[type="date"], input[type="email"], input[type="url"], select, textarea[type="text"]
+	+border-focus
+	+trans-direct
+	background: $darkA40
+	border-radius: 1px
+	color: $light-txt
+	font-weight: 500
+	margin: 0
+	min-height: 2em
+	padding: 0 0.4em
+	position: relative
+	transition: background 300ms $ease-in-out-cubic
+	transition: box-shadow 300ms $ease-in-out-cubic
+	transition: font-size 300ms $ease-in-out-back
+
+	&:hover, hover
+		+shadow-in(1em, 4px, $light20)
+
+	&:focus, focus
+		transition: background 300ms $ease-in-out-cubic
+		+border-focus
+		background: rgba($light, 0.75)
+		color: $dark-txt
+
+label > span
+	font-weight: 700
+
+/*	----------------------------------------
+	SEARCH
+	---------------------------------------- */
+input[type="search"]
+	+border-horizontal
+	+border-focus-2
+	border-top: 0
+	+size(100%)
+	background: rgba($darkC,0.5)
+	border-radius: 1px
+	color: $light-txt
+	font-weight: 400
+	min-height: 1.75em
+	padding: 0 0.4em
+
+
+/*	----------------------------------------
+	INPUT FORMS
+	---------------------------------------- */
+.file-form
+	+flex-row
+	width: 100%
+	min-width: 20em
+
+	input[type=text]
+
+	.btn-link
+		+trans-direct
+		background: $cyan * 0.8
+		height: 2em
+		width: 3em
+		margin-left: 0.5em
+
+	.file-upload
+		position: relative
+		text-align: center
+		margin: 0 !important
+
+		[type=file]
+			cursor: inherit
+			display: none
+			filter: alpha(opacity=0)
+			opacity: 0
+
+
+.form-simple
+	background: rgba($darkC,0.5)
+	+border-focus-2
+	border: 1px solid
+	+border-horizontal
+	border-top: none
+	margin-top: 1px
+	padding: 0 0.5em
+	color: $light-txt !important
+
+.input-group
+	+flex-row
+	+size(100%)
+
+	input[type="search"]
+		border-radius: 0
+
+	.input-group-btn
+		+flex-row
+		flex-shrink: 4
+		height: 100%
+		min-width: 20%
+
+		&>:nth-child(n)
+			+size(100%)
+			min-width: 20%
+			border-right: none
+			border-left: 1px solid
+			+border-vertical
+
+		&>:nth-last-child(1)
+			flex-shrink: 7
+			min-width: 2.5em
+
+			.drop-down-btn
+				border-left: none
+				+size(100%)
+				outline: none
+				border: none
+
+
+	&>*
+		+size(100%)
+		+trans-direct
+		margin: 0
+
+input +	.tag
+	+shadow-in
+	border: 1px solid $focus * 0.8
+	border-left: none
+	height: 2em
+	line-height: 2em
+	min-width: 10em
+	padding-left: 0.5em
+	width: 25%
+
+/*	----------------------------------------
+	CHECK BOXES
+	---------------------------------------- */
+input[type="checkbox"]
+	display: none
+
+	+ .label-text:before
+		content: "\f096"
+		display: inline-block
+		font-family: "FontAwesome"
+		font-style: normal
+		font-variant: normal
+		font-weight: normal
+		line-height: 1em
+		margin-right: 0.25em
+		speak: none
+		text-transform: none
+		width: 1em
+
+	&:checked + .label-text:before
+		+animation(tick 150ms $ease-out-cubic 1)
+		color: $focus * 0.9
+		content: "\f14a"
+
+	&:disabled + .label-text
+		color: $grey * 0.9
+
+		&:before
+			color: $grey * 0.9
+			content: "\f0c8"
+
+/*	----------------------------------------
+	SWITCH
+	---------------------------------------- */
+.switch
+	+flex-col-s
+	height: 1.5em
+	max-width: 3em
+	padding: 1px
+
+	&>*
+		height: 100%
+
+
+	input[class="switch"]
+		margin: auto
+
+		+ .switch-control
+			+shadow-in(0.5em)
+			min-width: 3em
+			border: 1px solid $focus * 0.8
+			border-radius: 1px
+			background: $darkB
+			display: inline-block
+
+			&:after
+				+shadow-in(4px, 1px, $darkB * 0.8)
+				+trans-over
+				background: rgba($red, 0.5)
+				color: $dark-txt
+				content: "0"
+				display: block
+				height: 100%
+				left: 50%
+				line-height: 1.1em
+				outline: 1px solid invis
+				position: relative
+				text-align: center
+				width: 50%
+
+		&:checked + .switch-control:after
+			background: rgba($green, 0.5)
+			content: "I"
+			left: 0
+
+		&:disabled + .switch-control:after
+			background: rgba($grey, 0.2)
+			content: ""
+
+/*	----------------------------------------
+	SELECTS
+	---------------------------------------- */
+select
+	height: 2em
+	line-height: 2em
+

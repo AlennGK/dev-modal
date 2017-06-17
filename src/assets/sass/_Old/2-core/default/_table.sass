@@ -1,0 +1,52 @@
+/*	----------------------------------------
+	TABLE
+	---------------------------------------- */
+table
+	border: 1px solid $darkA
+	background: $darkA40
+
+	*
+		+trans-direct
+		text-align: center
+		border: none
+		padding: 0
+		margin: 0
+		line-height: 2em
+		height: 2em
+
+	td
+		.fa
+			display: block
+			margin: auto
+			height: 1em
+
+	.left
+		text-align: left
+		font-weight: 700
+
+	td, th
+		padding: 0 0.5em
+
+
+	th
+		border-bottom: 1px solid darken($focus, 40%)
+		font-weight: 500
+
+	tr
+		td:nth-child(n+2), th:nth-child(n+2)
+			border-left: 1px solid $darkA
+
+	tr:nth-child(even)
+		background: rgba($darkA*0.8, 0.2)
+
+	tr:hover, th:hover, td:hover
+		background: $focus40
+
+
+	+desktop
+		*
+			font-size: $txt-s
+
+	+mobile
+		*
+			font-size: $txt-s * $m

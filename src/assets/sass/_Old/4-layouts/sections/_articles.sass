@@ -1,0 +1,168 @@
+/*	----------------------------------------
+	SEC-ARTICLES-LAYOUT
+	---------------------------------------- */
+.sec-panel
+	max-height: 8em
+	+flex-row
+
+	.menu
+		+flex-col
+		+size(100%)
+		text-align: center
+
+
+		.checks
+			+flex-row
+			height: 1em
+			margin: 0.5em 0
+			width: 100%
+
+		.search
+			margin: 0.5em
+			padding: 0 10%
+			width: 100%
+
+	.menu:nth-child(2)
+		flex-shrink: 2
+		flex-wrap: wrap
+		justify-content: space-around
+
+		a
+			min-width: 8em
+			margin: 0.5em
+
+
+.sec-prew
+	+size(100%)
+	+flex-col-s
+	padding: 0 0.5em
+
+	.art-card
+		height: 100%
+		padding-bottom: 0.25em
+
+	.art-card:last-child
+		padding-bottom: 0
+
+
+.sec-form
+	overflow: hidden
+	+size(100%)
+
+	.inputs
+		+size(100%)
+		padding: 1em
+
+		.files
+			+flex-row
+			justify-content: space-around
+			width: 100%
+			height: 2.5em
+
+		.body
+			min-height: 15em
+
+		.actions
+			+flex-row
+			flex-wrap: wrap
+			max-height: 10em
+			// padding: 0.25em
+
+			&>*
+				margin: 0.25em
+
+
+			.btn
+				width: 10em
+
+			.btn-d2
+				width: 8em
+
+			.btn:nth-child(4)
+				margin-right: auto
+
+
+.title
+	h1
+		+flex-row
+		justify-content: space-between
+
+		&>p
+			padding: 0 1em
+			color: $grey
+
+
+.sec-art
+	background: none
+	align-items: stretch
+
+	.body
+		line-height: 1.75em
+		text-indent: 2em
+		padding: 1em
+		min-height: 100%
+
+		p
+			margin-top: 1em
+
+		.img
+			+flex-col
+			float: left
+			min-width: 225px
+			min-height: 180px
+			margin-right: 1em
+
+			.i, .fa
+				width: 50%
+				z-index: -1
+
+
+.sec-list
+	table
+		td
+			font-size: 13px
+			line-height: 1em
+			overflow: hidden
+
+			.btn, .btn-d2
+				height: 1.5em
+				width: 5.5em
+
+		th:nth-child(1), td:nth-child(1)
+			width: 3em
+
+		th:nth-child(2), td:nth-child(2)
+			width: 2em
+
+		th:nth-child(n+7), td:nth-child(n+7)
+			width: 8em
+
+	.nav-table
+		+flex-row
+		padding-top: 0.5em
+		width: 100%
+
+
+.foo-art
+	+flex-col
+	+size(100%)
+	border-top: 1em solid $darkA40
+	justify-content: space-between
+	max-height: 7em
+
+
+	.stamp
+		background: $darkA
+		+flex-row
+		width: 100%
+		height: 2em
+		justify-content: space-between
+		padding: 0 1em
+
+	.nav-art
+		padding-top: 1%
+		+flex-row-s
+		height: 100%
+		justify-content: space-around
+		width: 60%
+

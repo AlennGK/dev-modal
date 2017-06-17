@@ -1,0 +1,60 @@
+/*	----------------------------------------
+	PROJECT-LOGIN
+	---------------------------------------- */
+.login
+	+size(100%)
+	+flex-row
+
+	.form-inline
+		+size(100%)
+		+flex-row
+		+trans-over
+		max-height: 2.5em
+
+		&>*
+			+size(100%)
+			outline: none
+
+		.input-group
+			+flex-row
+
+			&>*
+				+size(100%)
+				+trans-over
+				border: 0
+				color: $light-txt
+
+			.input-group-addon
+				border-radius: 0
+				min-width: 3.5em
+
+			.btn-glass
+				width: 2.5em
+				background: $invis
+
+			.form-control
+				border: 1px solid $invis
+				+trans-direct
+				+border-horizontal
+				+border-focus-2
+				border-top: none
+				border-bottom: 1px solid
+				background: rgba($darkA40, 0.5)
+				padding: 0 0.5em
+				min-width: 200px
+
+		.btn-login
+			flex-shrink: 7
+			min-width: 5em
+
++desktop
+	.login
+
+		.form-inline
+			max-width: 350px
+			font-size: $txt
+
++mobile
+	.form-inline
+		max-width: 100%
+		font-size: $txt * $m

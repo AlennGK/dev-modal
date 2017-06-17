@@ -1,0 +1,115 @@
+/*	----------------------------------------
+	KEYFRAMES
+	---------------------------------------- */
++keyframes(slide)
+	0%
+		left: 0
+
+	100%
+		left: 100%
+
+
++keyframes(tick)
+	0%
+		+transform(scale(0.2))
+		opacity: 0
+	80%
+		+transform(scale(1.4))
+		opacity: 1
+	100%
+		+transform(scale(1))
+
+
++keyframes(reveal)
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+
+
++keyframes(zoom)
+	0%
+		+transform(scale(1))
+
+	100%
+		+transform(scale(1 * $g))
+
+
++keyframes(pulse)
+	0%, 100%
+		opacity: 1
+	5%
+		opacity: 1
+	10%
+		opacity: 1
+	15%
+		opacity: 0.9
+	20%
+		opacity: 0.85
+	25%
+		opacity: 0.77
+	30%
+		opacity: 0.77
+	35%
+		opacity: 0.85
+	40%
+		opacity: 0.9
+	45%
+		opacity: 1
+	50%
+		opacity: 1
+	55%
+		opacity: 0.88
+	60%
+		opacity: 0.73
+	65%
+		opacity: 0.60
+	75%
+		opacity: 0.60
+	80%
+		opacity: 0.73
+	85%
+		opacity: 0.88
+	90%
+		opacity: 1
+
+
++keyframes(poke)
+	0%
+		color: $light-txt
+		padding-bottom: none
+		text-shadow: none
+
+	50%
+		color: $focus
+		+font-glow
+		padding-bottom: 3em
+
+	100%
+		color: $light-txt
+		padding-bottom: none
+		text-shadow: none
+
+
++keyframes(dropdown)
+	0%
+		opacity: 0
+		transform: rotateX(-90deg)
+	60%
+		transform: rotateX(50deg) scale(1.15)
+	100%
+		opacity: 1
+		transform: rotateX(0deg) scale(1)
+
+
++keyframes(slide-down)
+	0%, 20%
+		visibility: hidden
+		max-height: 0em
+
+	20%
+		top: 100%
+
+	100%
+	 	max-height: 60em
+

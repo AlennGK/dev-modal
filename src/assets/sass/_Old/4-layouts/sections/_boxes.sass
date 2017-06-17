@@ -1,0 +1,68 @@
+/*	----------------------------------------
+	BOXES-LAYOUT
+	---------------------------------------- */
+.box
+	width: 100%
+	height: auto !important
+	padding: 0 0.75em
+
+.box-msg
+	+flex-col
+	height: auto !important
+
+	form
+		align-items: stretch
+		width: 100%
+		min-height: 15em
+		padding: 1em
+
+		.title
+			width: 50%
+
+		.body
+			margin-top: 1em
+			width: 100%
+			min-height: 6em
+
+		.action
+			padding: 1em
+			justify-content: flex-end
+
+.box-tabs
+	flex: 1
+	width: 100%
+	padding: 1em
+
+	ul.tabs
+		+flex-row-s
+		background: $darkB
+		height: 2em
+		width: 100%
+
+	ul.tabs li
+		+trans-direct
+		cursor: pointer
+		min-width: 10em
+		text-align: center
+		border-left: 1px solid $invis
+		height: 2em
+		line-height: 2em
+
+	ul.tabs li:nth-child(n+2)
+		+border-vertical
+
+	ul.tabs li.active
+		+shadow-in(1em, 0.15em, $black)
+		padding-top: 1px
+
+	.tab-content
+		display: none
+		padding: 1em
+		padding-top: 0
+		background: $darkA40
+		border-top: 4px solid $darkA
+		animation: reveal 800ms $ease-in-out-cubic
+		min-height: 100%
+
+	.tab-content.active
+		display: inherit
